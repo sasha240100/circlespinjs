@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Circlespinjs by sasha240100</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Circlespinjs</h1>
+      <h2 class="project-tagline">Mouse spinning jquery plugin.</h2>
+      <a href="https://github.com/sasha240100/circlespinjs" class="btn">View on GitHub</a>
+      <a href="https://github.com/sasha240100/circlespinjs/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sasha240100/circlespinjs/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="circlespinjs" class="anchor" href="#circlespinjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>circlespinjs</h1>
+
+<p>Mouse spinning jquery plugin.</p>
+
+<p>Working example: <a href="http://sitepro.ga/circlespinjs/">http://sitepro.ga/circlespinjs/</a></p>
+
+<h1>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<p>Basic installation example:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> spin <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>#spin<span class="pl-pds">'</span></span>).circlespin();</pre></div>
+
+<p>Example with added rotation and refreshing on resize event:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> spin <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>#spin<span class="pl-pds">'</span></span>).circlespin({preangle<span class="pl-k">:</span> <span class="pl-c1">51.5</span>, autoupdate<span class="pl-k">:</span> <span class="pl-c1">true</span>}).setAngle(<span class="pl-c1">51.5</span>);
+</pre></div>
+
+<h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h3>
+
+<p>Put an options object in <em>circlespin()</em>  function argument</p>
+
+<ul>
+<li>
+<strong>width</strong> - width of spinning element <strong>(defines automaticly)</strong>
+</li>
+<li>
+<strong>height</strong> - height of spinning element <strong>(defines automaticly)</strong>
+</li>
+<li>
+<strong>left</strong> - x of spinning element <strong>(defines automaticly)</strong>
+</li>
+<li>
+<strong>top</strong> - y of spinning element <strong>(defines automaticly)</strong>
+</li>
+<li>
+<strong>preangle</strong> - adding start angle <strong>(deafult: 0)</strong>
+</li>
+<li>
+<strong>autoupdate</strong> - resize update <strong>(deafult: false)</strong>
+</li>
+</ul>
+
+<h3>
+<a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h3>
+
+<ul>
+<li>
+<strong>spinning</strong> - spinning event (when user is rotating object)</li>
+<li>
+<strong>spinstart</strong> - spinning start event</li>
+<li>
+<strong>spinend</strong> - spinning end event</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#spin<span class="pl-pds">'</span></span>).on(<span class="pl-s"><span class="pl-pds">'</span>spinstart<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>You started spinning this object!<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<h3>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+
+<p>If you need to get angle or specific number when something happens, you can use this methods</p>
+
+<div class="highlight highlight-javascript"><pre>spin.getResult(<span class="pl-c1">300</span>,<span class="pl-c1">1000</span>).toFixed() <span class="pl-c">// I use toFixed() to make it integer. will return number from 300 to 1000 (depends of angle)</span></pre></div>
+
+<p>One more returning method.</p>
+
+<div class="highlight highlight-javascript"><pre>spin.getAngle() <span class="pl-c">// returns angle in degrees</span></pre></div>
+
+<p>Setting new angle.</p>
+
+<div class="highlight highlight-javascript"><pre>spin.setAngle(<span class="pl-c1">90</span>) <span class="pl-c">// will set 90 degrees in angle</span></pre></div>
+
+<p>Updating object settings.</p>
+
+<div class="highlight highlight-javascript"><pre>spin.updateSettings({
+                width<span class="pl-k">:</span> <span class="pl-c1">50</span>,
+                height<span class="pl-k">:</span> <span class="pl-c1">30</span>,
+                left<span class="pl-k">:</span> <span class="pl-c1">20</span>,
+                top<span class="pl-k">:</span> <span class="pl-c1">10</span>,
+                preangle<span class="pl-k">:</span> <span class="pl-c1">90</span>
+}); <span class="pl-c">//will update settings.</span></pre></div>
+
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelog</h2>
+
+<ul>
+<li>
+<strong>verson 1.0</strong>  <em>(all is stable. basic features.)</em>
+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/sasha240100/circlespinjs">Circlespinjs</a> is maintained by <a href="https://github.com/sasha240100">sasha240100</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
