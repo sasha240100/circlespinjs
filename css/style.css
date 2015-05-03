@@ -1,0 +1,71 @@
+/* CSS Document */
+
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+html,body {
+	height:100%;
+	position:relative;
+}
+
+body {
+	padding:0;
+	margin:0;
+  background: -moz-radial-gradient( 50% 50%, circle closest-side, rgb(32,32,32) 0%, rgb(13,13,13) 100%);
+  background: -webkit-radial-gradient( 50% 50%, circle closest-side, rgb(32,32,32) 0%, rgb(13,13,13) 100%);
+  background: -ms-radial-gradient( 50% 50%, circle closest-side, rgb(32,32,32) 0%, rgb(13,13,13) 100%);
+  background-color: #202020;
+
+
+}
+
+#control {
+	width:340px;
+	height:340px;
+	background:url(../img/bg_control.png);
+	position:absolute;
+	left:calc(50% - 170px);
+	top:calc(50% - 170px);
+}
+
+#control #spinbg {
+	width:340px;
+	height:340px;
+	background:url(../img/frbg_control2.png);
+}
+
+#control #spinbg #spin, #control #spinbg #spincopy {
+	width:340px;
+	height:340px;
+	background:url(../img/fr_control2.png);
+	border-radius:100%;
+	cursor: -webkit-grab;
+}
+
+.text {
+	color:white;
+	position:absolute;
+	font-family: 'Oswald', sans-serif;
+	left: 100px;
+	top:50px;
+}
+
+#result {
+  position: absolute;
+  right: 20%;
+  background: #202020;
+  box-shadow: 2px 2px rgba(255,255,255,0.2) inset, 1px 1px black, 0 0 50px black inset,0 0 100px lightblue, 0 0 20px lightblue inset, 0 0 30px lightblue;
+  top: calc(50% - 25px);
+  border-radius: 5px;
+}
+
+#result #txtr {
+  color: #39FF14;
+  background: -webkit-linear-gradient(lightblue, lightgreen);
+  text-shadow: 5px 5px 40px #39FF14;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  padding: 0 20px;
+  width:75px;
+}
